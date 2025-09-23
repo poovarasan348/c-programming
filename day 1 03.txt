@@ -1,0 +1,12 @@
+#include <stdio.h>
+void main() {
+    int a=1,b=3;
+    if(a==b){
+printf("a is equal b");
+    }
+  else if (a,b){
+printf("a is grerater than b");
+  }
+  else if (a<b)
+  printf("a is lesser than b");
+}
