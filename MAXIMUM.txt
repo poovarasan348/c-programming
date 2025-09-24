@@ -1,12 +1,9 @@
 #include <stdio.h>
 int main() {
-    int arr[] = {10, 5, 20, 15, 25};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int max = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > max) {
-            max = arr[i];}
-    }
-    printf("The maximum value in the array is: %d\n", max);
-    return 0;
+    int a, b, max;
+    printf("Enter two numbers: "); 
+    scanf("%d %d", &a, &b); 
+    max = (a < b) ? a : b; 
+    printf("The maximum is: %d\n", max); 
+    return 0; 
 }
