@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int num, count, positive_count = 0, negative_count = 0, zero_count = 0;
+    int limit;
+    printf("Enter the number of integers you want to enter: ");
+    scanf("%d", &limit);
+    printf("Enter %d integers:\n", limit);
+    for (count = 0; count < limit; count++) {
+        scanf("%d", &num);
+        if (num > 0) {
+            positive_count++;
+        } else if (num < 0) {
+            negative_count++;
+        } else {
+            zero_count++;
+        }
+    }
+    printf("\nResults:\n");
+    printf("Positive numbers: %d\n", positive_count);
+    printf("Negative numbers: %d\n", negative_count);
+    printf("Zero numbers: %d\n", zero_count);
+    return 0;
+}

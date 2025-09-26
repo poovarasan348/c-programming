@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h> // For malloc
+#include <string.h> // For memcpy
+int* mergeArrays(int arr1[], int n1, int arr2[], int n2) {
+    int *mergedArr = (int*)malloc(sizeof(int) * (n1 + n2));
+    if (mergedArr == NULL) {
+        printf("Memory allocation failed!\n");
+        return NULL;
+    }
+    memcpy(mergedArr, arr1, n1 * sizeof(int));
+    memcpy(mergedArr + n1, arr2, n2 * sizeof(int));
+    return mergedArr;
+}
+int main() {
+    int arr1[] = {10, 20, 30};
+    int n1 = sizeof(arr1) / sizeof(arr1[0]);
+    int arr2[] = {40, 50, 60, 70};
+    int n2 = sizeof(arr2) / sizeof(arr2[0]);
+    int* result = mergeArrays(arr1, n1, arr2, n2);
+    if (result != NULL) {
+        printf("Merged array: ");
+        for (int i = 0; i < (n1 + n2); i++) {
+            printf("%d ", result[i]);
+        }
+        printf("\n");
+        free(result);
+        result = NULL;
+    }
+    return 0;
+}
