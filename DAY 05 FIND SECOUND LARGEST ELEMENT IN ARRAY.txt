@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <limits.h> 
+int findSecondLargest(int arr[], int n) {
+    if (n < 2) {
+        printf("Array must contain at least two elements.\n");
+        return INT_MIN; // Or some other indicator for error
+    }
+    int largest = INT_MIN;
+    int secondLargest = INT_MIN;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];   
+        } else if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i]; 
+        }
+    }
+    if (secondLargest == INT_MIN) {
+        printf("No distinct second largest element found (e.g., all elements are the same).\n");
+    }
+    return secondLargest;
+}
+int main() {
+    int arr1[] = {12, 35, 1, 10, 34, 1};
+    int n1 = sizeof(arr1) / sizeof(arr1[0]);
+    printf("Second largest in arr1: %d\n", findSecondLargest(arr1, n1));
+    int arr2[] = {5, 5, 5, 5};
+    int n2 = sizeof(arr2) / sizeof(arr2[0]);
+    printf("Second largest in arr2: %d\n", findSecondLargest(arr2, n2));
+    int arr3[] = {10};
+    int n3 = sizeof(arr3) / sizeof(arr3[0]);
+    printf("Second largest in arr3: %d\n", findSecondLargest(arr3, n3));
+
+    return 0;
+}

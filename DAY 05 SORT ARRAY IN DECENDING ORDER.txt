@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+int compareDescending(const void *a, const void *b) {
+    int valA = *(int *)a;
+    int valB = *(int *)b;
+    return valB - valA; // This achieves descending order
+}
+int main() {
+    int arr[] = {5, 2, 8, 1, 9, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("Original array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    qsort(arr, n, sizeof(int), compareDescending);
+    printf("Sorted array (descending): ");
+    for (int i = 0; i < n; i++) {
+       printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}

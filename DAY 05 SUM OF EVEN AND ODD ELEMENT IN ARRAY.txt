@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int size, i;
+    int arr[100];
+    int even_sum = 0;
+    int odd_sum = 0;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    printf("Enter the elements of the array:\n");
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0) {
+            even_sum += arr[i];
+        } else {
+            odd_sum += arr[i];
+        }
+    }
+    printf("Sum of even numbers: %d\n", even_sum);
+    printf("Sum of odd numbers: %d\n", odd_sum);
+    return 0;
+}
